@@ -6,3 +6,6 @@ clc; clear; close all;
 a = input('Enter value of a: ');
 b = a * 2;
 disp(b)
+
+b = a * 5;
+disp(b)
