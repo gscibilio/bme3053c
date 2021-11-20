@@ -26,12 +26,69 @@
 clc; clear; close all;
 
 %Input of the MR image to be analyzed
+I = input('Filename of the image to be analyzed: ','s');
 
+%Stops code if file doesn't exist
+if isfile(I)~=1
+    fprintf('This file does not exist');
+    return;
+end
+
+%Prep Image for Filtering
+I = imread(I);
+subplot(3,3,1); imshow(I);
+I = im2gray (I);
 
 %Loading image into matlab and filtering for high contrast, allowing the
 %glioma to be more easily identified
 
+%Noise Reduction of Image
+I = im2double(I);
+%IDK about these numbers. They were just on the slides
+sigma = 0.1;
+ksize = 5;
+In = I + randn(size(I))*sigma;
+h = ones(ksize)/ksize^2;
+Ic = conv2(In,h,'same');
+subplot(3,3,2);imshow(Ic);
 
+%Top-hat filtering for sharpness. Again numbers were just what I found on
+%the Matworks site
+se = strel('disk', 12);
+If = imtophat(Ic,se);
+If = imadjust(If);
+subplot(3,3,3); imshow(If);
+
+%Watershed Segmentation
+gI = imgradient(If);
+L = watershed(gI);
+Lrgb = label2rgb(L);
+subplot(3,3,4); imshow(Lrgb);
+
+se2 = strel('disk',20);
+Io = imopen(I,se2);
+
+Ie = imerode(I,se2);
+Iobr = imreconstruct(Ie,I);
+
+Ioc = imclose(Io, se2);
+
+%Rainbow Picture
+Iobrd = imdilate(Iobr,se2);
+Iobrcbr = imreconstruct(imcomplement(Iobrd),imcomplement(Iobr));
+Iobrcbr = imcomplement(Iobrcbr);
+subplot(3,3,5); imshow(Iobrcbr);
+
+fgm = imregionalmax(Iobrcbr);
+subplot(3,3,6);imshow(fgm)
+
+I2 = labeloverlay(If,fgm);
+subplot(3,3,7);imshow(I2);
+
+figure(2)
+imshow(I);
+figure (3);
+imshow (I2);
 %Comparison of inputted image to standard image (standard = no glioma 
 %present). This allows us to identify if a glioma is present or not. If no 
 %glioma is present, the code will end.
