@@ -6,7 +6,7 @@
 % Term: Fall 2021
 % J. Crayton Pruitt Family Department of Biomedical Engineering
 % University of Florida
-% Email: gianna.scibilio@ufl.edu
+% Email: gianna.scibilio@ufl.edu, sparrett@ufl.edu
 % November 15, 2021
 
 %Identifying Gliomas through Computer Led MR image analysis
