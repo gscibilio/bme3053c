@@ -158,6 +158,14 @@ end
 %If the tumor is not centralized, a quadrant of location will be determined
 if bwarea(maskedimage) > (0.5*area)
     location = 'Centralized';
+    %SIZE TUMOR
+    %Converting the area from pixels to cm^2
+    %Find the scale bar
+    [row,col] = find(L==1);
+    %Find the Length of the scale bar
+    dis = row(end) - row(1);
+    %Use the length of the scale bar to find the area of the tumor in cm
+    areacm = (100/dis^2)*area;
     treatment = 'Surgery or biopsy is possible, but it is likely that chemotherapy will be needed due to the location of the tumor';
 else
     %Setting new image as duplicate of tumor image (just for ease of writing/splitting)
@@ -210,10 +218,12 @@ end
 %HIGHLIGHT TUMOR
 I = imbinarize(Ifill);
  bw = im2uint8(I); %Change to uint8 so the gray connected works
+ W = bw;
 for f = 1:k %For all the chosen points
- J = grayconnected(bw,round(y1(f)),round(x1(f))); %include all the chosen points
+ J = grayconnected(bw,round(y1(f)),round(x1(f)));%include all the chosen points
+ W = imfuse(W,J,'blend');
 end
 
 %FINAL PRODUCT
-imshow(labeloverlay(Original_I,J))
+figure(1);imshow(labeloverlay(Original_I,W)); title(NameOriginal_I);
 annotation('textbox',[.11 0 .8 .1],'String',sprintf('Size: %.3f \nLocation: %s \nTreatment: %s ',areacm,location,treatment),'Color',[0 0 0],'FontWeight','normal','EdgeColor','none');
