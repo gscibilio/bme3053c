@@ -145,6 +145,7 @@ yunit = r*sin(th) + y;
 %Creating a mask of the same size as the circle created
 mask = poly2mask(xunit, yunit, rows, columns);
 
+
 %Masking the image with the circle mask created
 if colorchannels == 1
     maskedimage = Ifill;
