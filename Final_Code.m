@@ -224,5 +224,5 @@ for f = 1:k %For all the chosen points
 end
 
 %FINAL PRODUCT
-figure(2);imshow(labeloverlay(Original_I,W))
+figure(1);imshow(labeloverlay(Original_I,W)); title(NameOriginal_I);
 annotation('textbox',[.11 0 .8 .1],'String',sprintf('Size: %.3f \nLocation: %s \nTreatment: %s ',areacm,location,treatment),'Color',[0 0 0],'FontWeight','normal','EdgeColor','none');
