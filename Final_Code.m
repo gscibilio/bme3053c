@@ -12,10 +12,10 @@
 clc; clear; close all;
 
  %Input of the MR image to be analyzed
- Original_I = input('Filename of the image to be analyzed: ','s');
+ NameOriginal_I = input('Filename of the image to be analyzed: ','s');
 
  %Stops code if file doesn't exist
- if isfile(Original_I)~=1
+ if isfile(NameOriginal_I)~=1
      fprintf('This file does not exist'); %Notify if file doesn't exist
      return;%Stop code if file doesn't exist
  end
@@ -34,7 +34,7 @@ clc; clear; close all;
  end
  
  %Read image before the loop because it will onlu read once
- Original_I = imread(Original_I);
+ Original_I = imread(NameOriginal_I);
  
  %FIND TUMOR
  %While the image is not highlighted, continue asking to choose points
@@ -222,4 +222,4 @@ end
 
 %FINAL PRODUCT
 figure(1);imshow(labeloverlay(Original_I,W)); title(NameOriginal_I);
-annotation('textbox',[.11 0 .8 .1],'String',sprintf('Size: %.3f \nLocation: %s \nTreatment: %s ',areacm,location,treatment),'Color',[0 0 0],'FontWeight','normal','EdgeColor','none');
+annotation('textbox',[.11 0 .8 .1],'String',sprintf('Size: %.3f cm^2 \nLocation: %s \nTreatment: %s ',areacm,location,treatment),'Color',[0 0 0],'FontWeight','normal','EdgeColor','none');
