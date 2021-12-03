@@ -1,7 +1,7 @@
 % BME 3053C Final Project
 
-% Authors: Gianna Scibilio, Sarah Parrett, Jenny Noa
-% Group Members: Gianna Scibilio, Sarah Parrett, Jenny Noa
+% Authors: Gianna Scibilio, Sarah Parrett
+% Group Members: Gianna Scibilio, Sarah Parrett
 % Course: BME3053C Computer Applications for BME
 % Term: Fall 2021
 % J. Crayton Pruitt Family Department of Biomedical Engineering
