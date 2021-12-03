@@ -13,7 +13,7 @@
 *By creating a program to more easily classify tumors and provide information on them, treatment can begin much earlier, improving patient outcome.*
 
 # Data Set
-The data we used was provided by The Cancer Imaging Archive. The set contains 50 patients, but not all of them are compatible with this program. This is simply due to the nature of this project, and limited coding skills. However, the program works very well with roughly half of the patients included. All of the patient image files can be found in the main branch of the GitHub repository, in a folder titled 'Patient Image Files'.
+The data we used was provided by The Cancer Imaging Archive. The set contains 50 patients, but not all of them are compatible with this program. This is simply due to the nature of this project, and limited coding skills. However, the program works very well with roughly half of the patients included. All of the patient image files can be found in the main branch of the GitHub repository.
 
 # Usage
 In order to run our code, all the files and code must be in the same folder, so that Matlab can run through that folder and have access to both the code and all the images. The easiest way to do this is to either:
