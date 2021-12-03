@@ -9,10 +9,6 @@
 % Email: gianna.scibilio@ufl.edu, sparrett@ufl.edu
 % November 15, 2021
 
-%This is pretty close but doesn't work great unless youre really good at picking points.
-%We might need to edit the filtering a bit before we chose points to fix this but thresholding beforehand does not work as I've tried that. I can try more methods later possibly
-%To Do: Dot where we select points, Maybe allow a zoom?, Change color of highlight and put unto original, Other things like sizing and stuff
-%STrat by clearing everything
 clc; clear; close all;
 
  %Input of the MR image to be analyzed
