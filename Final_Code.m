@@ -82,20 +82,18 @@ clc; clear; close all;
         L_new = L;
         L_new(L>0)=0;
         
-        %THIS CAN PROBABLY NOT BE AN IF STATEMENT BUT IM LAZY
         for j = 1:k%Single out the values of the tumor using the location to user selected
         contumor(j) = L(round(y1(j)),round(x1(j)));%Find connectivity value of selected points
         L_new(find(L==contumor(j)))=1;%Mark tumor on new matrix
         end
         Ithresh(L_new==0)=0;%Delete everything but the tumor
  
-     %Show for everyone to see the results. I think this should change to a
-     %merged image
+     %Show for everyone to see the results.
         figure(1);
         subplot(1,2,1);imshow(Original_I);title('Original Image');
         subplot(1,2,2);imshow(Ithresh);title('Segmented Image');
  
-     %Ask the user a question if 
+     %Ask the user if the tumor is outlined
          dlgTitle    = 'User Question';
          dlgQuestion = 'Is the whole tumor outlined? If the outline is incomplete, or you see other parts of the brain try choosing more or less points.';
          choice = questdlg(dlgQuestion,dlgTitle,'Yes','No', 'No');
@@ -111,7 +109,6 @@ clc; clear; close all;
  Ifill = imfill(Ithresh,'holes'); %Fill holes in image so you can calculate size by amount of pixels
  area = bwarea(Ifill);%Find area of white spots in image
  
- %This is just to show what I'm doing above. We can delete this
  subplot(1,2,2);imshow(Ifill);title('Filled Tumor');
  
  %Confirm that the tumor is filled
@@ -125,10 +122,8 @@ clc; clear; close all;
 close all;
  
 %LOCATION OF THE TUMOR
- %Establishing variables based on image of tumor by itself
+ %Establishing variables based on image of tumor by itself, as well as the centralization range
 [rows, columns, colorchannels] = size(Ifill);
-
-%These values will be changed based on the image size, need to do once we add this to the regular code
 r = 250;
 x = columns/2;
 y = rows/2;
