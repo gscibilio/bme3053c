@@ -27,6 +27,7 @@ The final output of this program is displayed in a figure window. If desired, th
 # Documents
 Included below are two relevant documents, the Final Report for this project, and the presentation slides on the project. Feel free to take a look!
 
-[Final Report.pdf](https://github.com/gscibilio/bme3053c/files/8402[BME305C Biomedical Gals Spotlight Presentation Slides.pdf](https://github.com/gscibilio/bme3053c/files/8402983/BME305C.Biomedical.Gals.Spotlight.Presentation.Slides.pdf)
-981/Final.Report.pdf)
-[Uploading BME305C Biomedical Gals Spotlight Presentation Slides.pdf…]()
+[Final Report.pdf](https://github.com/gscibilio/bme3053c/files/8402986/Final.Report.pdf)
+
+[BME305C Biomedical Gals Spotlight Presentation Slides.pdf](https://github.com/gscibilio/bme3053c/files/8402989/BME305C.Biomedical.Gals.Spotlight.Presentation.Slides.pdf)
+
