@@ -23,3 +23,10 @@ In order to run our code, all the files and code must be in the same folder, so 
 
 # Output Information
 The final output of this program is displayed in a figure window. If desired, this output can be screenshotted or downloaded. This is up to the user discretion, so a download function was not included in the code, leaving the option up to the user.
+
+# Documents
+Included below are two relevant documents, the Final Report for this project, and the presentation slides on the project. Feel free to take a look!
+
+[Final Report.pdf](https://github.com/gscibilio/bme3053c/files/8402[BME305C Biomedical Gals Spotlight Presentation Slides.pdf](https://github.com/gscibilio/bme3053c/files/8402983/BME305C.Biomedical.Gals.Spotlight.Presentation.Slides.pdf)
+981/Final.Report.pdf)
+[Uploading BME305C Biomedical Gals Spotlight Presentation Slides.pdf…]()
