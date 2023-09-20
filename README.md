@@ -19,7 +19,7 @@ The data we used was provided by The Cancer Imaging Archive. The set contains 50
 In order to run our code, all the files and code must be in the same folder, so that Matlab can run through that folder and have access to both the code and all the images. The easiest way to do this is to either:
 
 * Download the code file and all images, placing them in one folder, then route Matlab through this folder and run the code
-* Run the code through the GitHub desktop. Anyone viewing this has been added as a collaborator, so the code and files can be pulled on the desktop app, making   them available on your computer. Matlab can then be routed through this folder, and the code should run smoothly.
+* Run the code through the GitHub desktop. The code and files can be pulled on the desktop app, making   them available on your computer. Matlab can be routed through this folder, and the code should run smoothly.
 
 # Output Information
 The final output of this program is displayed in a figure window. If desired, this output can be screenshotted or downloaded. This is up to the user discretion, so a download function was not included in the code, leaving the option up to the user.
